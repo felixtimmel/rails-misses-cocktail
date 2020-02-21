@@ -1,10 +1,21 @@
 .banner {
-  height: 100vh;
+  height: 70vh;
   background-size: cover;
   background-position: center;
   padding: 150px 0;
   text-align: center;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    length: 100%;
+  }
 }
 
 .banner h1 {

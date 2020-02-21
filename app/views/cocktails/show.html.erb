@@ -3,26 +3,64 @@
     <%= cl_image_tag @cocktail.photo.key, crop: :fill %>
   </div>
   <div class="second_part">
-    <div class="description">
-    <h1><%= @cocktail.name %></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt et consequatur repudiandae magnam magni, dolores tempora reprehenderit. Enim a reiciendis repellendus maxime incidunt, delectus totam voluptatem fuga dolorum esse dicta!</p>
-      <div class="btn-div">
-        <p class="btn btn-outline-danger my-2 my-sm-0"><%= link_to "Delete this cocktail",  cocktail_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></p>
-        <p class="btn btn-outline-success my-2 my-sm-0"><%= link_to "All cocktails",  cocktails_path%></p>
-      </div>
-    </div>
+    <div class="second_part_flex">
+      <div class="first_element">
+        <div class="description">
+        <h1><%= @cocktail.name %></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt et consequatur repudiandae magnam magni, dolores tempora reprehenderit. Enim a reiciendis repellendus maxime incidunt, delectus totam voluptatem fuga dolorum esse dicta!</p>
+          <div class="btn-div">
+            <p class="btn btn-outline-danger my-2 my-sm-0"><%= link_to "Delete this cocktail",  cocktail_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></p>
+            <p class="btn btn-outline-success my-2 my-sm-0"><%= link_to "All cocktails",  cocktails_path%></p>
+          </div>
+        </div>
 
-    <div class="cocktail_ingrediants">
-      <h4>Ingredients</h4>
-      <ul>
-        <% @cocktail.doses.each do |dose| %>
-          <li>
-            <%= dose.ingredient.name %> : <%= dose.description %>
-            <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, cocktail_dose_path(@cocktail.id, dose), method: :delete, data: { confirm: "Are you sure?" } %>
+        <div class="cocktail_ingrediants">
+          <h4>Ingredients</h4>
+          <ul>
+            <% @cocktail.doses.each do |dose| %>
+              <li>
+                <%= dose.ingredient.name %> : <%= dose.description %>
+                <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, cocktail_dose_path(@cocktail.id, dose), method: :delete, data: { confirm: "Are you sure?" } %>
+              </li>
+            <% end %>
+          </ul>
+          <p class="btn btn-outline-success my-2 my-sm-0"><%= link_to "Add ingredient",  new_cocktail_dose_path(@cocktail.id)%></p>
+        </div>
+      </div>
+
+      <div class="second_element">
+        <h4>Add a Review !</h4>
+        <%= render "reviews/form" %>
+      </div>
+
+      </div>
+
+    <div class="review">
+      <h4>Reviews</h4>
+      <% if @cocktail.reviews.empty? %>
+        <p>There is no reviews for this cocktails for the moment.</p>
+        <p>Be the first :</p>
+
+      <% else %>
+        <div class="list-group">
+        <% @cocktail.reviews.each do |review| %>
+          <li class="list-group-item">
+            <small>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <p><%= review.content %></p>
           </li>
         <% end %>
-      </ul>
-      <p class="btn btn-outline-success my-2 my-sm-0"><%= link_to "Add ingredient",  new_cocktail_dose_path(@cocktail.id)%></p>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

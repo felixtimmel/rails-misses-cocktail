@@ -2,6 +2,7 @@
 .cocktail_ingrediants {
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 20px;
+  margin-bottom: 30px;
 }
 
 .cocktail_ingrediants ul {
@@ -12,4 +13,30 @@
 
 .btn-div {
   margin-top: 20px;
+}
+
+.second_part_flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  .first_element {
+    width: 65%;
+    padding-right: 60px;
+    border-right: solid 1px rgb(220, 220, 220);
+  }
+
+  .second_element {
+    flex-grow: 1;
+    padding-left: 50px;
+  }
+}
+
+.review {
+  border-top: solid 1px rgb(220, 220, 220);
+  padding: 20px;
+
+  li {
+    margin-bottom: 10px;
+  }
 }

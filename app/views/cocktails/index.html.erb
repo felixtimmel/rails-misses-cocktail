@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 <div class="container">
-  <h2 id="au_menu">~ Au Menu ~</h2>
+  <h2 id="au_menu">~ Au Menu <i class="fas fa-book-open"></i> ~</h2>
   <div class="cocktail_grid">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail.id) do %>

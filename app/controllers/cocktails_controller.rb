@@ -3,7 +3,6 @@ class CocktailsController < ApplicationController
     if params[:search].nil?
       @cocktails = Cocktail.all
     else
-      raise
       @search = params[:search]
       @cocktails = Cocktail.where("lower(#{:name}) LIKE ?", "%#{@search.downcase}%")
     end
@@ -11,6 +10,7 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @review = Review.new
   end
 
   def new

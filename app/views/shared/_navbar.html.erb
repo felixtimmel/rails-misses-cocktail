@@ -5,9 +5,12 @@
   <div class="navbar_flexbox">
     <form action= "/" class="form-inline">
       <input class="form-control mr-sm-2" name= "search" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
     </form>
-    <p class="btn btn-outline-success my-2 my-sm-0" id="Add_cocktail"><%= link_to "Add a cocktail", new_cocktail_path %></p>
+      <%= link_to new_cocktail_path do%>
+          <p class="btn btn-outline-success my-2 my-sm-0" id="Add_cocktail">Add a cocktail <i class="fas fa-cocktail"></i>
+      <% end %>
+    </p>
   </div>
 
 </nav>
