@@ -1,11 +1,13 @@
 <%= render "shared/header" %>
 <div class="container">
-  <h2>~ Au Menu ~</h2>
+  <h2 id="au_menu">~ Au Menu ~</h2>
   <div class="cocktail_grid">
-      <% @cocktails.each do |cocktail| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(https://source.unsplash.com/featured/?cocktail)">
-          <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail.id) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(https://source.unsplash.com/featured/?<%= cocktail.name.split.join(',') %>,cocktail)">
+          <%= cocktail.name %>
         </div>
       <% end %>
+    <% end %>
   </div>
 </div>

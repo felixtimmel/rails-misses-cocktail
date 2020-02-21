@@ -1,12 +1,13 @@
-<div class="card-category" id="card-category-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?cocktail)">
-  <h1><%= @cocktail.name %></h1>
-</div>
-
-<div class="container">
-  <div class="cocktail_flexbox">
+<div class="cocktail_card_detail">
+  <div class="cocktail_img">
+    <img src="https://source.unsplash.com/featured/?cocktail" alt="cocktail picture">
+  </div>
+  <div class="second_part">
     <div class="description">
-      <h3>Description</h3>
+    <h1><%= @cocktail.name %></h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt et consequatur repudiandae magnam magni, dolores tempora reprehenderit. Enim a reiciendis repellendus maxime incidunt, delectus totam voluptatem fuga dolorum esse dicta!</p>
+      <p class="btn btn-outline-danger my-2 my-sm-0"><%= link_to "Delete this cocktail",  cocktail_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></p>
+      <p class="btn btn-outline-success my-2 my-sm-0"><%= link_to "All cocktails",  cocktails_path%></p>
     </div>
 
     <div class="cocktail_ingrediants">
@@ -17,14 +18,9 @@
             <%= dose.ingredient.name %> : <%= dose.description %>
             <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, cocktail_dose_path(@cocktail.id, dose), method: :delete, data: { confirm: "Are you sure?" } %>
           </li>
-
         <% end %>
       </ul>
-      <p class="btn btn-info"><%= link_to "Add ingredient",  new_cocktail_dose_path(@cocktail.id)%></p>
+      <p class="btn btn-outline-success my-2 my-sm-0"><%= link_to "Add ingredient",  new_cocktail_dose_path(@cocktail.id)%></p>
     </div>
-
   </div>
-
-  <p class="btn btn-warning"><%= link_to "Delete this cocktail",  cocktail_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></p>
-  <p class = "btn btn-info"><%= link_to "All cocktails",  cocktails_path%></p>
 </div>

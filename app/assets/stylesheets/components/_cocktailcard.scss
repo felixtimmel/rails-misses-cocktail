@@ -1,0 +1,34 @@
+.cocktail_card_detail {
+  margin: 100px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+}
+
+.cocktail_img {
+  length: 100%;
+  width: 35%;
+  margin-right: 20px;
+}
+
+.cocktail_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.second_part {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+
+  .description {
+    margin-bottom: 40px;
+  }
+}
+
+.description .btn {
+  margin: 20px 0px;
+}
+
