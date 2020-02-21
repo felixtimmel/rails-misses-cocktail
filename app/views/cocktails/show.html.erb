@@ -1,13 +1,15 @@
 <div class="cocktail_card_detail">
   <div class="cocktail_img">
-    <img src="https://source.unsplash.com/featured/?cocktail" alt="cocktail picture">
+    <%= cl_image_tag @cocktail.photo.key, crop: :fill %>
   </div>
   <div class="second_part">
     <div class="description">
     <h1><%= @cocktail.name %></h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt et consequatur repudiandae magnam magni, dolores tempora reprehenderit. Enim a reiciendis repellendus maxime incidunt, delectus totam voluptatem fuga dolorum esse dicta!</p>
-      <p class="btn btn-outline-danger my-2 my-sm-0"><%= link_to "Delete this cocktail",  cocktail_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></p>
-      <p class="btn btn-outline-success my-2 my-sm-0"><%= link_to "All cocktails",  cocktails_path%></p>
+      <div class="btn-div">
+        <p class="btn btn-outline-danger my-2 my-sm-0"><%= link_to "Delete this cocktail",  cocktail_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></p>
+        <p class="btn btn-outline-success my-2 my-sm-0"><%= link_to "All cocktails",  cocktails_path%></p>
+      </div>
     </div>
 
     <div class="cocktail_ingrediants">

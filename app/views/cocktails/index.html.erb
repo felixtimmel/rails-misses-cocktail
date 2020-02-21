@@ -4,7 +4,7 @@
   <div class="cocktail_grid">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail.id) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(https://source.unsplash.com/featured/?<%= cocktail.name.split.join(',') %>,cocktail)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('<%= cl_image_path cocktail.photo.key %>')">
           <%= cocktail.name %>
         </div>
       <% end %>
