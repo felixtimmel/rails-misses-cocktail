@@ -1,0 +1,11 @@
+<%= render "shared/header" %>
+<div class="container">
+  <h2>~ Au Menu ~</h2>
+  <div class="cocktail_grid">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(https://source.unsplash.com/featured/?cocktail)">
+          <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+        </div>
+      <% end %>
+  </div>
+</div>

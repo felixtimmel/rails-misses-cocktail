@@ -11,3 +11,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import "cocktails";
+@import "doses";
+@import "ingredients";
+
+body {
+  font-family: 'Poppins', ;
+}
+
+.container {
+  width: 80%;
+  margin-bottom: 40px;
+}
+

@@ -1,1 +1,36 @@
-// Specific CSS for your home-page
+
+.cocktail_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.cocktail_flexbox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  .description {
+    width: 50%;
+  }
+}
+
+#card-category-banner {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Poppins', ;
+}
+
+h2 {
+  text-align: center;
+  margin: 40px;
+  font-family: 'Poppins', ;
+  font-weight: bold;
+}
