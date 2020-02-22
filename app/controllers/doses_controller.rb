@@ -5,13 +5,14 @@ class DosesController < ApplicationController
   end
 
   def create
+    @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(safe_params)
     @dose.cocktail_id = params[:cocktail_id]
     @dose.ingredient_id = params[:dose][:ingredient_id]
     if @dose.save
       redirect_to cocktail_path(@dose.cocktail_id)
     else
-      render 'new'
+      render 'doses/new'
     end
   end
 
