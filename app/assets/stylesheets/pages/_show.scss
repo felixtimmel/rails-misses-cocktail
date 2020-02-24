@@ -15,23 +15,6 @@
   margin-top: 20px;
 }
 
-.second_part_flex {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
-
-  .first_element {
-    width: 65%;
-    padding-right: 60px;
-    border-right: solid 1px rgb(220, 220, 220);
-  }
-
-  .second_element {
-    flex-grow: 1;
-    padding-left: 50px;
-  }
-}
-
 .review {
   border-top: solid 1px rgb(220, 220, 220);
   padding: 20px;
@@ -39,4 +22,22 @@
   li {
     margin-bottom: 10px;
   }
+}
+
+/* responsiv */
+
+@media(max-width: 767px) {
+/* start of medium tablet styles */
+  .container_2 {
+    width: 100%;
+  }
+
+  .container_2 h1 {
+    font-size: 30px;
+  }
+}
+
+@media(max-width: 479px) {
+/* start of phone styles */
+
 }

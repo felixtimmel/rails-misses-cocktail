@@ -6,9 +6,7 @@
 }
 
 .cocktail_img {
-  length: 100%;
-  width: 50%;
-  margin-right: 20px;
+  width: 60%;
 }
 
 .cocktail_img img {
@@ -32,3 +30,50 @@
   margin: 20px 0px;
 }
 
+.second_part_flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  .first_element {
+    width: 65%;
+    padding-right: 60px;
+    border-right: solid 1px rgb(220, 220, 220);
+  }
+
+  .second_element {
+    flex-grow: 1;
+    padding-left: 50px;
+  }
+}
+
+/* responsiv */
+@media(max-width: 900px) {
+/* start of medium tablet styles */
+  .cocktail_img {
+    width: 100%
+  }
+}
+
+@media(max-width: 767px) {
+/* start of medium tablet styles */
+  .cocktail_card_detail {
+    display: block;
+  }
+  .cocktail_img {
+    width: 100%
+  }
+
+  .second_part_flex {
+    display: block;
+  }
+
+  .first_element {
+    width: 100%;
+    border: none;
+  }
+
+  .second_element {
+    padding: 0px;
+  }
+}
