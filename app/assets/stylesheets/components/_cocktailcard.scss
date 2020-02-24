@@ -66,14 +66,16 @@
 
   .second_part_flex {
     display: block;
+
+    .first_element {
+      width: 100%;
+      border: none;
+    }
+
+    .second_element {
+      padding: 0;
+    }
   }
 
-  .first_element {
-    width: 100%;
-    border: none;
-  }
 
-  .second_element {
-    padding: 0px;
-  }
 }
