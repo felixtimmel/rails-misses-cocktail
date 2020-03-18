@@ -1,7 +1,14 @@
 <div class="container">
   <div class="container_2">
-    <h3>Ingredient</h3>
+    <div class="cocktail_part">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('<%= cl_image_path @cocktail.photo.key %>')">
+        <%= @cocktail.name %>
+      </div>
+    </div>
+    <div class="ingredient_part">
+      <h3>Ingredient</h3>
 
-    <%= render "form" %>
+      <%= render "form" %>
+    </div>
   </div>
 </div>
