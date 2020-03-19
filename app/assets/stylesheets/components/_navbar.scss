@@ -29,3 +29,14 @@ p:hover a {
 }
 
 /* responsiv */
+
+@media(max-width: 700px) {
+/* start of medium tablet styles */
+  #navbar_input {
+    width: 150px;
+  }
+
+  .add_btn_text {
+    display: none;
+  }
+}

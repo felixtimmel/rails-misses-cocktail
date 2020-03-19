@@ -1,14 +1,14 @@
 <nav class="navbar navbar-light bg-light">
   <%= link_to cocktails_path do %>
-    <img src="https://banner2.cleanpng.com/20180409/dge/kisspng-cocktail-margarita-computer-icons-beer-martini-snack-5acbc9c53d6788.3928828315233049012515.jpg" width="50px" alt="logo">
+    <img src="<%= image_url "alcohol.png" %>" alt="logo" width="50px" alt="logo">
   <% end %>
   <div class="navbar_flexbox">
     <form action= "/" class="form-inline">
-      <input class="form-control mr-sm-2" name= "search" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" name= "search" type="search" placeholder="Search" aria-label="Search" id="navbar_input">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
     </form>
       <%= link_to new_cocktail_path do%>
-          <p class="btn btn-outline-success my-2 my-sm-0" id="Add_cocktail">Add a cocktail <i class="fas fa-cocktail"></i>
+          <p class="btn btn-outline-success my-2 my-sm-0" id="Add_cocktail"><span class="add_btn_text">Add a cocktail</span> <i class="fas fa-cocktail"></i>
       <% end %>
     </p>
   </div>
