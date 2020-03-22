@@ -9,8 +9,10 @@
         <h1><%= @cocktail.name %></h1>
           <p><%= @cocktail.instructions %></p>
           <div class="btn-div">
-            <p class="btn btn-outline-danger my-2 my-sm-0"><%= link_to "Delete this cocktail",  cocktail_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></p>
-            <p class="btn btn-outline-success my-2 my-sm-0"><%= link_to "All cocktails",  cocktails_path%></p>
+            <p class="btn btn-outline-danger my-2 my-sm-0"><%= link_to cocktail_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </p>
           </div>
         </div>
 
@@ -25,7 +27,7 @@
             <% end %>
           </ul>
           <button type="button" class="btn btn-success my-2 my-sm-0" data-toggle="modal" data-target="#exampleModalCenter">
-            <p>Add ingredient</p>
+            <p><i class="fas fa-plus-square"></i></p>
           </button>
 
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
