@@ -52,7 +52,7 @@
 @media(max-width: 900px) {
 /* start of medium tablet styles */
   .cocktail_img {
-    width: 100%
+    width: 100%;
   }
 }
 
@@ -60,9 +60,10 @@
 /* start of medium tablet styles */
   .cocktail_card_detail {
     display: block;
+    max-height: none;
   }
   .cocktail_img {
-    width: 100%
+    width: 100%;
   }
 
   .second_part_flex {
