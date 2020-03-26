@@ -3,7 +3,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   justify-content: space-between;
-  max-height: 70vh;
 }
 
 .cocktail_img {
@@ -61,6 +60,7 @@
   .cocktail_card_detail {
     display: block;
     max-height: none;
+    margin: 40px;
   }
   .cocktail_img {
     width: 100%;
