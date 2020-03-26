@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class CocktailsController < ApplicationController
   def index
     if params[:search].nil?
@@ -20,7 +22,12 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(safe_params)
-    if @cocktail.save
+    if @cocktail.save && !@cocktail.photo.attachment.nil?
+      redirect_to new_cocktail_dose_path(@cocktail)
+    elsif @cocktail.save && @cocktail.photo.attachment.nil?
+      photo_url = "https://source.unsplash.com/collection/9459762/#{(1..1000).to_a.sample}"
+      file = URI.open(photo_url)
+      @cocktail.photo.attach(io: file, filename: "random_photo.jpg", content_type: 'image/jpg')
       redirect_to new_cocktail_dose_path(@cocktail)
     else
       render 'new'
